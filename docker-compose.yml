@@ -11,14 +11,22 @@ services:
         volumes:
             - .:/djmdb
         depends_on:
-            - pdb
-
-    pdb:
-        image: postgres
-        container_name: pdb_con
+            - mysqldb
+    
+    mysqldb:
+        image: mysql:5.7
+        container_name: mysqldb_con
         volumes:
-            - ./db/pdb-data:/var/lib/postgresql/data
+            - ./db/mysqldb-data:/var/lib/mysql
         environment:
-            - POSTGRES_DB=postgres
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=postgres
+            MYSQL_DATABASE: 'rostockerdevdb'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    # pdb:
+    #     image: postgres
+    #     container_name: pdb_con
+    #     volumes:
+    #         - ./db/pdb-data:/var/lib/postgresql/data
+    #     environment:
+    #         - POSTGRES_DB=postgres
+    #         - POSTGRES_USER=postgres
+    #         - POSTGRES_PASSWORD=postgres
