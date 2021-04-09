@@ -2,15 +2,14 @@ version: "3.8"
 
 services:
     app:
-        build:
-            context: .
+        build: .
         command: python manage.py runserver 0.0.0.0:8000
-        image: djmdb_img
+        image: djmdb_img:1.0
         container_name: djmdb_con
         ports:
             - 8000:8000
         volumes:
-            - .:/mdb
+            - .:/djmdb
         depends_on:
             - pdb
 
