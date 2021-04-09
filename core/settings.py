@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mysqlapp.apps.MysqlappConfig'
+    'mysqlapp.apps.MysqlappConfig',
+    'postgresapp.apps.PostgresappConfig'
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASE_ROUTERS = [
     'core.routers.db_routers.AuthRouter',
+    'postgresapp.routers.db_routers.PostgresRouter',
 ]
 DATABASES = {
     'default': {},
@@ -86,6 +88,14 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'mysqldb',
         'PORT': '3306'
+    },
+    'postgres_db': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'pdb',
+        'PORT': 5432
     }
 }
 
