@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mysqlapp.apps.MysqlappConfig'
 ]
 
 MIDDLEWARE = [
@@ -73,12 +74,20 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASE_ROUTERS = [
+    'core.routers.db_routers.AuthRouter',
+]
+DATABASES = {
+    'default': {},
+    'mysql_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rostockerdevdb',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'mysqldb',
+        'PORT': '3306'
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -91,16 +100,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rostockerdevdb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'mysqldb',
-        'PORT': '3306'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'rostockerdevdb',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'mysqldb',
+#         'PORT': '3306'
+#     }
+# }
 
 
 # Password validation

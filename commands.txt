@@ -1,0 +1,10 @@
+# Docker-Compose
+
+docker-compose build
+docker-compose run --rm app /bin/sh
+docker-compose up
+
+
+## Commands for App:mysqlapp
+
+python manage.py migrate --database=mysql_db
