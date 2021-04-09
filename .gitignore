@@ -1,2 +1,4 @@
-Dockerfile
 commands.txt
+
+# Database
+db/
