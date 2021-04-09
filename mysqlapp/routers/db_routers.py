@@ -1,5 +1,5 @@
-class AuthRouter:
-    route_app_labels = { 'auth', 'contenttypes', 'sessions', 'admin' }
+class MysqlRouter:
+    route_app_labels = { 'auth', 'contenttypes', 'sessions', 'admin', 'mysqlapp' }
     
     def db_for_read(self, model, **hints):
         """[Functions for read from the database]

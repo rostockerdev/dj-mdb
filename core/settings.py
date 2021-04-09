@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASE_ROUTERS = [
-    'core.routers.db_routers.AuthRouter',
+    'mysqlapp.routers.db_routers.MysqlRouter',
     'postgresapp.routers.db_routers.PostgresRouter',
 ]
 DATABASES = {
@@ -96,7 +96,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'pdb',
-        'PORT': 5432
+        'PORT': '5432'
     }
 }
 

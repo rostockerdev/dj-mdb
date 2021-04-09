@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 
+from mysqlapp.admin import mysql_site
 from postgresapp.admin import postgres_site
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mysqladmin/', admin.site.urls),
+    path('mysqladmin/', mysql_site.urls),
     path('postgresadmin/', postgres_site.urls),
 ]
 
