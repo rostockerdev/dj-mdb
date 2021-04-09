@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mysqlapp.apps.MysqlappConfig',
-    'postgresapp.apps.PostgresappConfig'
+    # 'mysqlapp.apps.MYSQLAdminConfig',
+    'postgresapp.apps.PostgresappConfig',
 ]
 
 MIDDLEWARE = [
